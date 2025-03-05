@@ -14,3 +14,7 @@
     - **Step 4:** Run the application to make sure it's correctly set up and connects to the MySQL database.
 
 ---
+
+### **Ticket 2: Created `Employee` and `Task` Models**
+
+---
