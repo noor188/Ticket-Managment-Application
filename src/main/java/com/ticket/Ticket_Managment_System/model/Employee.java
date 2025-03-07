@@ -26,7 +26,7 @@ public class Employee {
 
     @Enumerated(EnumType.STRING)
     private Role role;
-    
+
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Task> tasks;
 }
