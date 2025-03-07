@@ -2,4 +2,4 @@
 
 ---
 
-Ticket management application using Java
+Ticket management application created with Java
