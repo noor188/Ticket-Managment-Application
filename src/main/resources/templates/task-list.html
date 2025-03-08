@@ -6,24 +6,27 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" th:href="@{/css/list.css}">
-    <title>Employee list</title>
+    <title>Task list</title>
 </head>
 <body class="blue-theme">
 <div class="container">
-    <h1>Employee list</h1>
-    <a th:href="@{/employees/new}">Create New Employee</a>
-    <table class="employee-table">
+    <h1>Task list</h1>
+    <a th:href="@{/tasks/new}">Create new Task</a>
+    <table>
         <tr>
-            <th>Name</th>
-            <th>Email</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Assigned to</th>
             <th>Actions</th>
         </tr>
-        <tr th:each="employee : ${employees}">
-            <td th:text="${employee.name}">name</td>
-            <td th:text="${employee.email}">email</td>
+        <tr th:each="task : ${tasks}">
+            <td th:text="${task.title}">name</td>
+            <td th:text="${task.description}">email</td>
+            <td th:text="${task.status}">status</td>
+            <td th:text="${task.employee.name}">employee</td>
             <td>
-                <a th:href="@{/employees/delete/{id}(id=${employee.id})}">Delete</a>
-                <a th:href="@{/employees/edit/{id}(id=${employee.id})}">Update</a>
+               Delete/Update
             </td>
         </tr>
     </table>
