@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/employee-form.css}">
+    <title>Form</title>
+</head>
+<body class="blue-theme">
+
+<h1 th:if="${employee.id == null}">Create Employee</h1>
+<h1 th:if="${employee.id != null}">Edit Employee</h1>
+<form th:action="@{/employees/save}" th:object="${employee}" method="POST" >
+    <input type="hidden" th:field="*{id}">
+    <div>
+        <label>Name:
+            <input type="text" th:field="*{name}" placeholder="Enter your name ...">
+        </label>
+    </div>
+
+    <div>
+        <label>Email:
+            <input type="email" th:field="*{email}" placeholder="Enter your email ...">
+        </label>
+    </div>
+
+    <div>
+        <label>Role:</label>
+        <select th:field="*{role}">
+            <option th:value="ADMIN">Admin</option>
+            <option th:value="EMPLOYEE">Employee</option>
+        </select>
+    </div>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>
