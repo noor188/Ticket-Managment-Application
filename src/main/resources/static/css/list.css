@@ -1,7 +1,7 @@
 .blue-theme{
     background-color: #F6F8D5;
     color: #205781;
-    font-family: 'Arial', sans-serif;;
+    font-family: 'Arial', sans-serif;
 }
 
 .container{
@@ -16,7 +16,7 @@ h1{
     text-align: center;
 }
 
-.employee-table{
+table{
     display: flex;
     justify-content: center;
     text-align: center;

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/form.css}">
+    <title>Form</title>
+</head>
+<body class="blue-theme">
+
+<h1 th:if="${task.id == null}">Create Task</h1>
+<h1 th:if="${task.id != null}">Edit Tesk</h1>
+<form th:action="@{/tasks/save}" th:object="${task}" method="POST" >
+    <input type="hidden" th:field="*{id}">
+    <div>
+        <label>Title:
+            <input type="text" th:field="*{title}" placeholder="Enter task title ...">
+        </label>
+    </div>
+
+    <div>
+        <label>Description:
+            <textarea th:field="*{description}" rows="6" cols="9">Enter task description ...</textarea>
+        </label>
+    </div>
+
+    <div>
+        <label>Status:
+            <input type="text" th:field="*{status}" placeholder="Enter task status ...">
+        </label>
+    </div>
+    <div>
+        <label>Assigned to Employee
+        <select th:field="*{employee.id}">
+            <option th:each="employee: ${employees}" th:value="${employee.id}" th:text="${employee.name}"></option>
+        </select>
+        </label>
+    </div>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>
