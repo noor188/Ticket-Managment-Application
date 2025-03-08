@@ -1,0 +1,11 @@
+.blue-theme{
+    background-color: #F6F8D5;
+    color: #205781;
+    font-family: 'Arial', sans-serif;;
+}
+
+h1{
+    color: #205781;
+    margin-bottom: 40px;
+    text-align: center;
+}

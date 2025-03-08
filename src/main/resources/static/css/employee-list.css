@@ -1,0 +1,31 @@
+.blue-theme{
+    background-color: #F6F8D5;
+    color: #205781;
+    font-family: 'Arial', sans-serif;;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1{
+    color: #205781;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.employee-table{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-collapse: collapse;
+    width: 75%;
+}
+
+th ,td{
+    border: 1px solid #4F959D;
+    width: 100%;
+    padding: 10px;
+}
