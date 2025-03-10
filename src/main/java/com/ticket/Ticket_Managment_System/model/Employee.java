@@ -23,9 +23,11 @@ public class Employee {
     @Size(min = 3, max = 50, message = "email must be between 3 and 50 character")
     private String email;
 
-
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @NotBlank(message = "Password is required")
+    private String password;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Task> tasks;
@@ -68,5 +70,13 @@ public class Employee {
 
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public @NotBlank(message = "Password is required") String getPassword() {
+        return password;
+    }
+
+    public void setPassword(@NotBlank(message = "Password is required") String password) {
+        this.password = password;
     }
 }

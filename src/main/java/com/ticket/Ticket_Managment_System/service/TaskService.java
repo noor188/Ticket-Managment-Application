@@ -41,4 +41,8 @@ public class TaskService {
         task.setStatus(status);
         taskRepository.save(task);
     }
+
+    public List<Task> getTasksByEmployee(Employee employee){
+        return taskRepository.getTasksByEmployee(employee);
+    }
 }

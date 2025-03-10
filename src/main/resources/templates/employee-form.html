@@ -27,6 +27,11 @@
     </div>
 
     <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" th:field="*{password}" required />
+    </div>
+
+    <div>
         <label>Role:</label>
         <select th:field="*{role}">
             <option th:value="ADMIN">Admin</option>
