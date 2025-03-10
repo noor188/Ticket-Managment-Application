@@ -7,10 +7,7 @@ import com.ticket.Ticket_Managment_System.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,6 +40,22 @@ public class TaskController {
     @PostMapping("/save")
     public String saveTask(@ModelAttribute("task") Task task){
         taskService.saveTask(task);
+        return "redirect:/tasks";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showTaskEditForm(@PathVariable Long id, Model model){
+        Task task = taskService.getTaskById(id);
+        List<Employee> employees = employeeService.getAllEmployee();
+        model.addAttribute("task", task);
+        model.addAttribute("employees", employees);
+        return "task-form";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteTask(@PathVariable Long id){
+        Task task = taskService.getTaskById(id);
+        taskService.deleteTask(task);
         return "redirect:/tasks";
     }
 }
