@@ -11,6 +11,9 @@
 <body class="blue-theme">
 <div class="container">
     <h1>Task list</h1>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
     <a th:href="@{/tasks/new}">Create new Task</a>
     <table>
         <tr>
